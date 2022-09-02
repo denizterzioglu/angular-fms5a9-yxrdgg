@@ -10,6 +10,7 @@ import { RequestFormComponent } from './request-form/request-form.component';
 import { AuthComponent } from './auth/auth.component';
 import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './auth.guard';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { AuthGuard } from './auth.guard';
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: RequestFormComponent },
-      { path: 'auth', component: AuthComponent },
+      { path: 'login', component: LoginComponent },
       { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] }
     ]),
   ],
@@ -30,6 +31,7 @@ import { AuthGuard } from './auth.guard';
     RequestFormComponent,
     AuthComponent,
     AdminComponent,
+    LoginComponent,
   ],
   bootstrap: [AppComponent],
 })
