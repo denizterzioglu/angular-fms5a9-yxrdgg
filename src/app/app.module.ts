@@ -9,6 +9,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { RequestFormComponent } from './request-form/request-form.component';
 import { AuthComponent } from './auth/auth.component';
 import { AdminComponent } from './admin/admin.component';
+import { AuthGuard } from './auth.guard';
+
 
 @NgModule({
   imports: [
@@ -19,7 +21,7 @@ import { AdminComponent } from './admin/admin.component';
     RouterModule.forRoot([
       { path: '', component: RequestFormComponent },
       { path: 'auth', component: AuthComponent },
-      { path: 'admin', component: AdminComponent }
+      { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] }
     ]),
   ],
   declarations: [
